@@ -1,0 +1,29 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+
+        <% if(items.length > 0) { %>
+
+                <% for(var cartItem of items) { %>
+                      <div> 
+
+                        <div> item : <%= cartItem.id %></div>
+                        <div> qty : <%= cartItem.qty %></div>
+
+                      </div>  
+                        
+
+                <% } %>
+<div>
+
+        <%= price %>
+</div>
+        <% } else { %>
+no item in cart
+        <%} %>
+
+
+        <%- include('../includes/end.ejs') %>

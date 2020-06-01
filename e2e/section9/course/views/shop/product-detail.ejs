@@ -1,0 +1,31 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main>
+            <div style='text-align: center;'>
+                <h1 style='margin-left: 20px;'><%= product.title %></h1>
+                <img style='width: 250px; height: 250px;' src="<%= product.imageUrl %>" />
+                <h2 style='margin-left: 20px;'><%= product.price %></h2>
+                <div style='margin-left: 20px;'><%= product.description %></div>
+                <% if(!product.inCart) {%>
+                    <form action='/addToCart' method='POST'>
+                        <input type="hidden" id="productId" name="productId" value="<%= product.id %>">
+                        <button class="btn" type="submit">Add To Cart</button>
+                    </form>
+                <% }else {%>
+                    <button class="btn" disabled >In cart</button>
+                <% } %>
+            </div>
+           <!-- <div style='display: flex;'>
+            </div>
+            <div>
+            </div>
+           <div style='display: flex;'>
+           </div>
+
+           <div style='display: flex;'>
+           </div> -->
+        </main>
+        <%- include('../includes/end.ejs') %>

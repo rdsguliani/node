@@ -1,0 +1,22 @@
+
+<%- include('./includes/head') %>
+<link rel="stylesheet" href="/css/user.css">
+<link rel="stylesheet" href="/css/forms.css">
+</head>
+
+<body>
+<%- include('./includes/navigation') %>
+
+<main>
+    <form class="product-form" action="/users/list" method="POST">
+        <div class="form-control">
+            <label for="title">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+
+        <button class="btn" type="submit">Add User</button>
+    </form>
+</main>
+
+
+<%- include('./includes/end') %>
